@@ -9,7 +9,6 @@ namespace circustrein
 {
     internal class Wagon
     {
-        public Train train = new();
         public List<Animal> Animals { get; set; }
         public int Points { get; set; }
          public bool Hascarnivore { get; set; }
@@ -19,15 +18,29 @@ namespace circustrein
         public Wagon(int number) 
         {
             Number = number;
+            Animals = new List<Animal>();
+        }
+
+        public void addanimal(Animal animal)
+        {
+            Animals.Add(animal);
         }
 
         public override string ToString()
         {
             string returnstring = "";
-
+            string carnivore = "";
             foreach (Animal animal in Animals)
             {
-                returnstring += animal.Name + "(" +animal.Points.ToString() + ") ";
+                if(animal.Carnivore == true)
+                {
+                    carnivore = "yes";
+                }
+                else
+                {
+                    carnivore = "no";
+                }
+                returnstring += animal.Name + "(" +animal.Points.ToString() + " size:" + animal.Size.ToString() + " carnivore: " + carnivore + ") ";
             }
 
             return "wagon number: " + Number.ToString() + " " + returnstring;

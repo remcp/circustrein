@@ -10,18 +10,37 @@ namespace circustrein
     internal class Train
     {
         public List<Wagon> WagonList { get; set; }
-
+        public Train()
+        {
+            WagonList = new List<Wagon>();
+            Wagon wagon = new Wagon(0);
+            WagonList.Add(wagon);
+        }
         public Wagon addwagon()
         {
-            Wagon newwagon = new Wagon(WagonList.Count + 1);
-            WagonList.Add(newwagon);
-            return newwagon;
+            if (WagonList == null)
+            {
+                Wagon firstwagon = new Wagon(0);
+                WagonList.Add(firstwagon);
+                return firstwagon;
+            }
+            else
+            {
+                Wagon newwagon = new Wagon(WagonList.Count + 1);
+                WagonList.Add(newwagon);
+                return newwagon;
+            }
         }
 
         public void addanimal(Animal newanimal)
         {
             bool animaladded = false;
-            if (newanimal.Carnivore == true)
+            if(WagonList[0].Animals == null)
+            {
+                WagonList[0].addanimal(newanimal);
+                animaladded = true;
+            }
+            if (newanimal.Carnivore == true && animaladded == false)
             {
                 foreach (Wagon wagon in WagonList)
                 {
@@ -67,7 +86,7 @@ namespace circustrein
                     }
                 }
             }
-            else
+            else if(animaladded == false)
             {
                 foreach (Wagon wagon in WagonList)
                 {
