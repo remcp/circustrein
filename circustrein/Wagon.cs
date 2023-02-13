@@ -40,7 +40,7 @@ namespace circustrein
                 {
                     carnivore = "no";
                 }
-                returnstring += animal.Name + "(" +animal.Points.ToString() + " size:" + animal.Size.ToString() + " carnivore: " + carnivore + ") ";
+                returnstring += "\n" + animal.Name + "(" +animal.Points.ToString() + " size:" + animal.Size.ToString() + " carnivore: " + carnivore + ") ";
             }
 
             return "wagon number: " + Number.ToString() + " " + returnstring;
