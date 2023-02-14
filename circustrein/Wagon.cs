@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace circustrein
 {
-    internal class Wagon
+    public class Wagon
     {
         public List<Animal> Animals { get; set; }
         public int Points { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace circustrein
 {
-    internal class Animal
+    public class Animal
     {
         public string Name { get; set; }
         public Size.size Size { get; set; }
