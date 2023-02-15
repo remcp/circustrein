@@ -22,11 +22,14 @@ namespace circustrein
             WagonList.Add(newwagon);
             return newwagon;
         }
+        
 
         public void addanimal(List<Animal> newanimals)
         {
             List<Animal> sortedanimallist = new();
             int totalpoints = 0;
+            //kijk naar het totaal aantal punten. wanneer dit niet deelbaar is door 2 of het is deelbaar door 10 dan worden de dieren van klein naar groot gesorteerd met de carnivoren voorop.
+            //wanneer dit niet het geval is worden de dieren gesorteerd van klein naar middelmatig naar groot met de carnivoren voorop.
             foreach(Animal animal in newanimals)
             {
                 totalpoints = totalpoints + animal.Points;
@@ -39,11 +42,11 @@ namespace circustrein
             {
                sortedanimallist = newanimals.OrderBy(x => x.Size).ThenByDescending(x => x.Carnivore).ToList();
             }
-            
-
+            //er wordt per dier in de lijst gekeken of deze kan worden toegevoegt aan een wagon.
             foreach (Animal newanimal in sortedanimallist)
             {
                 bool animaladded = false;
+                //wanneer de eerste wagon leeg is kan deze worden toegevoegt.
                 if (WagonList[0].Animals.Count == 0)
                 {
                     WagonList[0].Animals.Add(newanimal);
@@ -54,6 +57,7 @@ namespace circustrein
                         WagonList[0].Hascarnivore = true;
                     }
                 }
+                //er wordt gekeken of het dier een carnivoor is of niet
                 if (newanimal.Carnivore == true && animaladded == false)
                 {
                     animaladded = tryaddcarnivore(newanimal, animaladded);
@@ -83,6 +87,7 @@ namespace circustrein
 
         public bool tryaddcarnivore(Animal newanimal, bool animaladded)
         {
+            //in iedere wagon wordt voor ieder dier gegeken welke groote deze heeft. de kleinste wordt opgeslagen. 
             foreach (Wagon wagon in WagonList)
             {
                 int smallestanimalsize = wagon.Animals[0].Points;
@@ -110,6 +115,7 @@ namespace circustrein
                             break;
                     }
                 }
+                // wanneer het kleinste dier kleiner is dan de carnivoor die moet worden toegevoegt en hiermee niet de punten hoger uitkomen dan 10 wordt het dier in de wagon gezet.
                 if (wagon.Hascarnivore == false && newanimal.Points + wagon.Points < 11 && newanimal.Points < smallestanimalsize)
                 {
                     animaladded = true;
@@ -126,6 +132,7 @@ namespace circustrein
         {
             foreach (Wagon wagon in WagonList)
             {
+                //er wordt gekeken of de wagon een carnivoor bevat. is dit niet het geval kan het dier worden toegevoegt mits hiermee de 10 punten niet worden overschreden.
                 if (wagon.Hascarnivore == false && newanimal.Points + wagon.Points < 11)
                 {
                     animaladded = true;
@@ -133,6 +140,7 @@ namespace circustrein
                     wagon.Points = wagon.Points + newanimal.Points;
                     break;
                 }
+                //heeft de wagon wel een carnivoor word er gekeken naar hoegroot deze carnivoor is. is deze kleiner dan het nieuwe dier dan kan deze worden toegevoegt. 
                 else if (wagon.Hascarnivore == true && newanimal.Points + wagon.Points < 11)
                 {
                     int carnivoresize = new();
