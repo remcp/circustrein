@@ -8,6 +8,7 @@
             Program program = new Program();
             Train train = new Train();
             string animallist = "";
+            List<Animal> animals = new List<Animal>();
             while(true)
             {
                 Console.WriteLine("do you want to add a animal or see what is in the train?");
@@ -58,9 +59,10 @@
                         }
 
                         Animal animal = new Animal(name, size,carnivore);
-                        train.addanimal(animal);
+                        animals.Add(animal);
                             break;
                     case ConsoleKey.NumPad2:
+                        train.addanimal(animals);
                         foreach(Wagon wagon in train.WagonList)
                         {
                             animallist += wagon.ToString() + "\n";

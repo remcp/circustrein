@@ -33,5 +33,10 @@ namespace circustrein
                     break;
             }
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
