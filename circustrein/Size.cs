@@ -12,8 +12,8 @@ namespace circustrein
         public enum size
         {
             small,
-            medium,
-            big
+            big,
+            medium
         }
     }
 }

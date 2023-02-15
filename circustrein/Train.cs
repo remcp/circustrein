@@ -18,14 +18,29 @@ namespace circustrein
         }
         public Wagon addwagon()
         {
-                Wagon newwagon = new Wagon(WagonList.Count + 1);
-                WagonList.Add(newwagon);
-                return newwagon;
+            Wagon newwagon = new Wagon(WagonList.Count + 1);
+            WagonList.Add(newwagon);
+            return newwagon;
         }
 
         public void addanimal(List<Animal> newanimals)
         {
-            List<Animal> sortedanimallist = newanimals.OrderByDescending(x => x.Points).ThenByDescending(x => x.Carnivore).ToList();
+            List<Animal> sortedanimallist = new();
+            int totalpoints = 0;
+            foreach(Animal animal in newanimals)
+            {
+                totalpoints = totalpoints + animal.Points;
+            }
+            if (totalpoints % 2 != 0 || totalpoints % 10 == 0)
+            {
+                sortedanimallist = newanimals.OrderBy(x => x.Points).ThenByDescending(x => x.Carnivore).ToList();
+            }
+            else
+            {
+               sortedanimallist = newanimals.OrderBy(x => x.Size).ThenByDescending(x => x.Carnivore).ToList();
+            }
+            
+
             foreach (Animal newanimal in sortedanimallist)
             {
                 bool animaladded = false;
@@ -70,32 +85,32 @@ namespace circustrein
         {
             foreach (Wagon wagon in WagonList)
             {
-                Size.size smallestanimalsize = wagon.Animals[0].Size;
+                int smallestanimalsize = wagon.Animals[0].Points;
                 foreach (Animal wagonanimal in wagon.Animals)
                 {
                     switch (wagonanimal.Size)
                     {
                         case Size.size.small:
-                            if (smallestanimalsize >= Size.size.small)
+                            if (smallestanimalsize >= 1)
                             {
-                                smallestanimalsize = Size.size.small;
+                                smallestanimalsize = 1;
                             }
                             break;
                         case Size.size.medium:
-                            if (smallestanimalsize >= Size.size.medium)
+                            if (smallestanimalsize >= 3)
                             {
-                                smallestanimalsize = Size.size.medium;
+                                smallestanimalsize = 3;
                             }
                             break;
                         case Size.size.big:
-                            if (smallestanimalsize >= Size.size.big)
+                            if (smallestanimalsize >= 5)
                             {
-                                smallestanimalsize = Size.size.big;
+                                smallestanimalsize = 5;
                             }
                             break;
                     }
                 }
-                if (wagon.Hascarnivore == false && newanimal.Points + wagon.Points < 11 && newanimal.Size < smallestanimalsize)
+                if (wagon.Hascarnivore == false && newanimal.Points + wagon.Points < 11 && newanimal.Points < smallestanimalsize)
                 {
                     animaladded = true;
                     wagon.Hascarnivore = true;
@@ -120,22 +135,22 @@ namespace circustrein
                 }
                 else if (wagon.Hascarnivore == true && newanimal.Points + wagon.Points < 11)
                 {
-                    Size.size carnivoresize = new();
+                    int carnivoresize = new();
                     foreach (Animal wagonanimal in wagon.Animals)
                     {
-                        switch (wagonanimal.Size)
+                        switch (wagonanimal.Points)
                         {
-                            case Size.size.small:
-                                carnivoresize = Size.size.small;
+                            case 1:
+                                carnivoresize = 1;
                                 break;
-                            case Size.size.medium:
-                                carnivoresize = Size.size.medium;
+                            case 3:
+                                carnivoresize = 3;
                                 break;
-                            case Size.size.big:
-                                carnivoresize = Size.size.big;
+                            case 5:
+                                carnivoresize = 5;
                                 break;
                         }
-                        if (newanimal.Size > carnivoresize)
+                        if (newanimal.Points > carnivoresize)
                         {
                             wagon.Animals.Add(newanimal);
                             wagon.Points = wagon.Points + newanimal.Points;
