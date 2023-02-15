@@ -94,7 +94,6 @@ namespace circustrein
                             }
                             break;
                     }
-
                 }
                 if (wagon.Hascarnivore == false && newanimal.Points + wagon.Points < 11 && newanimal.Size < smallestanimalsize)
                 {

@@ -6,7 +6,6 @@
         private static void Main(string[] args)
         {
             Program program = new Program();
-            Train train = new Train();
             string animallist = "";
             List<Animal> animals = new List<Animal>();
             while(true)
@@ -62,6 +61,7 @@
                         animals.Add(animal);
                             break;
                     case ConsoleKey.NumPad2:
+                        Train train = new Train();
                         train.addanimal(animals);
                         foreach(Wagon wagon in train.WagonList)
                         {
