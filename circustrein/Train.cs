@@ -25,7 +25,7 @@ namespace circustrein
 
         public void addanimal(List<Animal> newanimals)
         {
-            List<Animal> sortedanimallist = newanimals.OrderByDescending(x => x.Carnivore).ThenByDescending(x => x.Points).ToList();
+            List<Animal> sortedanimallist = newanimals.OrderByDescending(x => x.Points).ThenByDescending(x => x.Carnivore).ToList();
             foreach (Animal newanimal in sortedanimallist)
             {
                 bool animaladded = false;
@@ -42,6 +42,14 @@ namespace circustrein
                 if (newanimal.Carnivore == true && animaladded == false)
                 {
                     animaladded = tryaddcarnivore(newanimal, animaladded);
+                    if (animaladded == false)
+                    {
+                        Wagon newwagon = addwagon();
+                        newwagon.Animals.Add(newanimal);
+                        newwagon.Points = newwagon.Points + newanimal.Points;
+                        animaladded = true;
+                        newwagon.Hascarnivore = true;
+                    }
                 }
                 else if (animaladded == false)
                 {
@@ -62,7 +70,7 @@ namespace circustrein
         {
             foreach (Wagon wagon in WagonList)
             {
-                Size.size smallestanimalsize = new();
+                Size.size smallestanimalsize = wagon.Animals[0].Size;
                 foreach (Animal wagonanimal in wagon.Animals)
                 {
                     switch (wagonanimal.Size)
@@ -94,15 +102,6 @@ namespace circustrein
                     wagon.Hascarnivore = true;
                     wagon.Animals.Add(newanimal);
                     wagon.Points = wagon.Points + newanimal.Points;
-                    break;
-                }
-                else
-                {
-                    Wagon newwagon = addwagon();
-                    newwagon.Animals.Add(newanimal);
-                    wagon.Points = wagon.Points + newanimal.Points;
-                    newwagon.Hascarnivore = true;
-                    animaladded = true;
                     break;
                 }
             }
