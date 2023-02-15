@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "circustrein", "circustrein\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "circustreinTests", "circustreinTests\circustreinTests.csproj", "{D53C8754-155C-4C55-9477-9897378DCBFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "circustreinTests1", "circustreinTests1\circustreinTests1.csproj", "{FB270481-FDAC-47B8-AD2D-B13143AB1EC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D53C8754-155C-4C55-9477-9897378DCBFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D53C8754-155C-4C55-9477-9897378DCBFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D53C8754-155C-4C55-9477-9897378DCBFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB270481-FDAC-47B8-AD2D-B13143AB1EC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB270481-FDAC-47B8-AD2D-B13143AB1EC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB270481-FDAC-47B8-AD2D-B13143AB1EC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB270481-FDAC-47B8-AD2D-B13143AB1EC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
