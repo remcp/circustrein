@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace circustrein
 {
 
-    internal class Size
+    public class Size
     {
         public enum size
         {
