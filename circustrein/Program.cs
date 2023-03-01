@@ -2,7 +2,6 @@
 {
     public class Program
     {
-        
         private static void Main(string[] args)
         {
             Program program = new Program();
@@ -77,19 +76,21 @@
 
         public void cleanscreen()
         {
-            Console.SetCursorPosition(0, 0);
-            int x = 0;
-            int y = 0;
+            //Console.SetCursorPosition(0, 0);
+            //int x = 0;
+            //int y = 0;
 
-            for (y = 0; y < 15; y++)
-            {
-                for (x = 0; x < 70; x++)
-                {
-                    Console.SetCursorPosition(x, y);
-                    Console.Write(" ");
-                }
-            }
-            Console.SetCursorPosition(0, 0);
+            //for (y = 0; y < 15; y++)
+            //{
+            //    for (x = 0; x < 70; x++)
+            //    {
+            //        Console.SetCursorPosition(x, y);
+            //        Console.Write(" ");
+            //    }
+            //}
+            //Console.SetCursorPosition(0, 0);
+            Console.Clear();
         }
+
     }
 }
