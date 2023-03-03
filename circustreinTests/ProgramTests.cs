@@ -83,6 +83,7 @@ namespace circustrein.Tests
             }
 
             //sorting
+            train.addanimal(animallist);
 
                 train.addanimal(animallist);
 
@@ -129,7 +130,7 @@ namespace circustrein.Tests
             }
 
             //sorting
-                train.addanimal(animallist);
+            train.addanimal(animallist);
 
 
             //result
@@ -174,9 +175,7 @@ namespace circustrein.Tests
             }
 
             //sorting
-
-                train.addanimal(animallist);
-            
+            train.addanimal(animallist);
 
 
             //result
@@ -221,7 +220,7 @@ namespace circustrein.Tests
             }
 
             //sorting
-                train.addanimal(animallist);
+            train.addanimal(animallist);
 
 
             //result
@@ -265,9 +264,8 @@ namespace circustrein.Tests
                 animallist.Add(animal);
             }
 
-            //add animals
-                train.addanimal(animallist);
-            
+            //sorting
+            train.addanimal(animallist);
 
 
             //result
@@ -311,8 +309,7 @@ namespace circustrein.Tests
             }
 
             //sorting
-
-                train.addanimal(animallist);
+            train.addanimal(animallist);
 
 
             //result

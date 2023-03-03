@@ -2,13 +2,11 @@
 {
     public class Program
     {
-        
         private static void Main(string[] args)
         {
             Program program = new Program();
-            Train train = new Train();
-            List<Animal> animals = new List<Animal>();
             string animallist = "";
+            List<Animal> animals = new List<Animal>();
             while(true)
             {
                 Console.WriteLine("do you want to add a animal or see what is in the train?");
@@ -62,6 +60,7 @@
                         animals.Add(animal);
                             break;
                     case ConsoleKey.NumPad2:
+                        Train train = new Train();
                         train.addanimal(animals);
                         foreach(Wagon wagon in train.WagonList)
                         {
@@ -77,19 +76,21 @@
 
         public void cleanscreen()
         {
-            Console.SetCursorPosition(0, 0);
-            int x = 0;
-            int y = 0;
+            //Console.SetCursorPosition(0, 0);
+            //int x = 0;
+            //int y = 0;
 
-            for (y = 0; y < 15; y++)
-            {
-                for (x = 0; x < 70; x++)
-                {
-                    Console.SetCursorPosition(x, y);
-                    Console.Write(" ");
-                }
-            }
-            Console.SetCursorPosition(0, 0);
+            //for (y = 0; y < 15; y++)
+            //{
+            //    for (x = 0; x < 70; x++)
+            //    {
+            //        Console.SetCursorPosition(x, y);
+            //        Console.Write(" ");
+            //    }
+            //}
+            //Console.SetCursorPosition(0, 0);
+            Console.Clear();
         }
+
     }
 }
