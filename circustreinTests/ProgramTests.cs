@@ -37,10 +37,7 @@ namespace circustrein.Tests
             animallist.Add(animal6);
 
             //sorting
-            foreach(Animal animal in animallist)
-            {
-                train.addanimal(animal);
-            }
+            train.addanimal(animallist);
 
 
             //result
@@ -57,39 +54,37 @@ namespace circustrein.Tests
             for(int i = 0; i < 1;i++)
             {
                 Animal animal = new Animal("small carnivore", Size.size.small, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 0; i++)
             {
                 Animal animal = new Animal("medium carnivore", Size.size.medium, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 0; i++)
             {
                 Animal animal = new Animal("big carnivore", Size.size.big, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 5; i++)
             {
                 Animal animal = new Animal("small herbivore", Size.size.small, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 2; i++)
             {
                 Animal animal = new Animal("medium herbivore", Size.size.medium, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 1; i++)
             {
                 Animal animal = new Animal("big herbivore", Size.size.big, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
 
             //sorting
-            foreach (Animal animal in animallist)
-            {
-                train.addanimal(animal);
-            }
+
+                train.addanimal(animallist);
 
 
             //result
@@ -105,39 +100,36 @@ namespace circustrein.Tests
             for (int i = 0; i < 1; i++)
             {
                 Animal animal = new Animal("small carnivore", Size.size.small, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 1; i++)
             {
                 Animal animal = new Animal("medium carnivore", Size.size.medium, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 1; i++)
             {
                 Animal animal = new Animal("big carnivore", Size.size.big, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 1; i++)
             {
                 Animal animal = new Animal("small herbivore", Size.size.small, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 1; i++)
             {
                 Animal animal = new Animal("medium herbivore", Size.size.medium, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 1; i++)
             {
                 Animal animal = new Animal("big herbivore", Size.size.big, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
 
             //sorting
-            foreach (Animal animal in animallist)
-            {
-                train.addanimal(animal);
-            }
+                train.addanimal(animallist);
 
 
             //result
@@ -153,39 +145,38 @@ namespace circustrein.Tests
             for (int i = 0; i < 2; i++)
             {
                 Animal animal = new Animal("small carnivore", Size.size.small, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 1; i++)
             {
                 Animal animal = new Animal("medium carnivore", Size.size.medium, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 1; i++)
             {
                 Animal animal = new Animal("big carnivore", Size.size.big, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 1; i++)
             {
                 Animal animal = new Animal("small herbivore", Size.size.small, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 5; i++)
             {
                 Animal animal = new Animal("medium herbivore", Size.size.medium, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 1; i++)
             {
                 Animal animal = new Animal("big herbivore", Size.size.big, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
 
             //sorting
-            foreach (Animal animal in animallist)
-            {
-                train.addanimal(animal);
-            }
+
+                train.addanimal(animallist);
+            
 
 
             //result
@@ -201,39 +192,36 @@ namespace circustrein.Tests
             for (int i = 0; i < 1; i++)
             {
                 Animal animal = new Animal("small carnivore", Size.size.small, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 0; i++)
             {
                 Animal animal = new Animal("medium carnivore", Size.size.medium, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 0; i++)
             {
                 Animal animal = new Animal("big carnivore", Size.size.big, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 1; i++)
             {
                 Animal animal = new Animal("small herbivore", Size.size.small, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 1; i++)
             {
                 Animal animal = new Animal("medium herbivore", Size.size.medium, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 2; i++)
             {
                 Animal animal = new Animal("big herbivore", Size.size.big, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
 
             //sorting
-            foreach (Animal animal in animallist)
-            {
-                train.addanimal(animal);
-            }
+                train.addanimal(animallist);
 
 
             //result
@@ -249,39 +237,37 @@ namespace circustrein.Tests
             for (int i = 0; i < 3; i++)
             {
                 Animal animal = new Animal("small carnivore", Size.size.small, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 0; i++)
             {
                 Animal animal = new Animal("medium carnivore", Size.size.medium, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 0; i++)
             {
                 Animal animal = new Animal("big carnivore", Size.size.big, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 0; i++)
             {
                 Animal animal = new Animal("small herbivore", Size.size.small, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 2; i++)
             {
                 Animal animal = new Animal("medium herbivore", Size.size.medium, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 3; i++)
             {
                 Animal animal = new Animal("big herbivore", Size.size.big, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
 
-            //sorting
-            foreach (Animal animal in animallist)
-            {
-                train.addanimal(animal);
-            }
+            //add animals
+                train.addanimal(animallist);
+            
 
 
             //result
@@ -296,39 +282,37 @@ namespace circustrein.Tests
             for (int i = 0; i < 7; i++)
             {
                 Animal animal = new Animal("small carnivore", Size.size.small, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 3; i++)
             {
                 Animal animal = new Animal("medium carnivore", Size.size.medium, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 3; i++)
             {
                 Animal animal = new Animal("big carnivore", Size.size.big, true);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 0; i++)
             {
                 Animal animal = new Animal("small herbivore", Size.size.small, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 5; i++)
             {
                 Animal animal = new Animal("medium herbivore", Size.size.medium, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
             for (int i = 0; i < 6; i++)
             {
                 Animal animal = new Animal("big herbivore", Size.size.big, false);
-                train.addanimal(animal);
+                animallist.Add(animal);
             }
 
             //sorting
-            foreach (Animal animal in animallist)
-            {
-                train.addanimal(animal);
-            }
+
+                train.addanimal(animallist);
 
 
             //result

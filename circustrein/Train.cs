@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -23,32 +24,37 @@ namespace circustrein
                 return newwagon;
         }
 
-        public void addanimal(Animal newanimal)
+        public void addanimal(List<Animal> newanimals)
         {
-            bool animaladded = false;
-            if(WagonList[0].Animals.Count == 0)
+
+            newanimals.Sort((x, y) => y.Points.CompareTo(x.Points));
+            foreach (Animal newanimal in newanimals)
             {
-                WagonList[0].Animals.Add(newanimal);
-                WagonList[0].Points = WagonList[0].Points + newanimal.Points;
-                animaladded = true;
-                if(newanimal.Carnivore == true)
+                bool animaladded = false;
+                if (WagonList[0].Animals.Count == 0)
                 {
-                    WagonList[0].Hascarnivore = true;
-                }
-            }
-            if (newanimal.Carnivore == true && animaladded == false)
-            {
-                animaladded = tryaddcarnivore(newanimal, animaladded);
-            }
-            else if(animaladded == false)
-            {
-                animaladded = tryaddherbivore(newanimal, animaladded);
-                if (animaladded == false)
-                {
-                    Wagon newwagon = addwagon();
-                    newwagon.Animals.Add(newanimal);
-                    newwagon.Points = newwagon.Points + newanimal.Points;
+                    WagonList[0].Animals.Add(newanimal);
+                    WagonList[0].Points = WagonList[0].Points + newanimal.Points;
                     animaladded = true;
+                    if (newanimal.Carnivore == true)
+                    {
+                        WagonList[0].Hascarnivore = true;
+                    }
+                }
+                if (newanimal.Carnivore == true && animaladded == false)
+                {
+                    animaladded = tryaddcarnivore(newanimal, animaladded);
+                }
+                else if (animaladded == false)
+                {
+                    animaladded = tryaddherbivore(newanimal, animaladded);
+                    if (animaladded == false)
+                    {
+                        Wagon newwagon = addwagon();
+                        newwagon.Animals.Add(newanimal);
+                        newwagon.Points = newwagon.Points + newanimal.Points;
+                        animaladded = true;
+                    }
                 }
             }
         }
