@@ -85,7 +85,6 @@ namespace circustrein.Tests
             //sorting
             train.addanimal(animallist);
 
-                train.addanimal(animallist);
 
 
             //result
